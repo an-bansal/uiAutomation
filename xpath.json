@@ -1,0 +1,12 @@
+{
+    "loginPage":
+    {
+        "email": "//*[@id='login']",
+        "password": "//*[@id='password']",
+        "btnLogin": "//button[contains(text(), 'Log in')]"
+    },
+    "landingPage":
+    {
+      "user": "//span[contains(text(), 'User')]"
+    }
+}

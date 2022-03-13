@@ -16,6 +16,7 @@ class Util:
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
         self.locator = json.load(open('xpath.json'))
+        self.input = json.load(open('input.json'))
 
     def login(self):
         self.driver.get(config.baseURL)
@@ -26,3 +27,17 @@ class Util:
 
     def validateElement(self, locator):
         return self.driver.find_element(By.XPATH, value=locator)
+
+    def openInventory(self):
+        self.login()
+        self.driver.find_element(By.XPATH, value=self.locator['landingPage']['inventory']).click()
+
+    def createProduct(self):
+        self.openInventory()
+        self.driver.find_element(By.XPATH, value=self.locator['inventoryPage']['menuProducts']).click()
+        self.driver.find_element(By.XPATH, value=self.locator['inventoryPage']['optProducts']).click()
+
+        assert self.validateElement(self.locator['productsPage']['pageHeading'])
+        self.driver.find_element(By.XPATH, value=self.locator['productsPage']['createProd']).click()
+        self.driver.find_element(By.XPATH, value=self.locator['newProdPage']['newProdPage']). \
+            send_keys(self.input['createProduct']['name'])

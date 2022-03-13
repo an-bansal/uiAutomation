@@ -10,20 +10,21 @@ class TestAspireapp(unittest.TestCase):
         self.driver = self.ut.driver
         self.addCleanup(self.driver.quit)
 
-
-
     # 1. Login to web application
     def test_aspireLogin(self):
         self.ut.login()
         assert self.ut.validateElement(self.ut.locator['landingPage']['user'])
 
     # 2. Navigate to `Inventory` feature
-    def test_oprnInventory(self):
-        assert True
+    def test_openInventory(self):
+        self.ut.openInventory()
+        assert self.ut.validateElement(self.ut.locator['inventoryPage']['pageHeading'])
 
     # 3. From the top-menu bar, select `Products -> Products` item, then create a new product
     def test_createProduct(self):
-        assert True
+        self.ut.createProduct()
+        print((self.ut.locator['newProdPage']['newProdName']).format(self.ut.input['createProduct']['name']))
+        assert self.ut.validateElement((self.ut.locator['newProdPage']['newProdName']).format(self.ut.input['createProduct']['name']))
 
     # 4. Update the quantity of new product is more than 10
     def test_updateProductQuantity(self):

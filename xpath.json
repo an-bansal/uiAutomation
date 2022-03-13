@@ -7,6 +7,24 @@
     },
     "landingPage":
     {
-      "user": "//span[contains(text(), 'User')]"
+      "user": "//span[contains(text(), 'User')]",
+      "inventory": "//div[contains(text(), 'Inventory')]"
+    },
+    "inventoryPage":
+    {
+        "pageHeading" : "//span[contains(text(), 'Inventory Overview')]",
+        "menuProducts" : "//button/span[contains(text(), 'Products')]",
+        "optProducts" : "//a[contains(text(), 'Products')]"
+    },
+    "productsPage" :
+    {
+        "pageHeading" : "//li/span[contains(text(), 'Products')]",
+        "createProd": "//button[contains(text(), 'Create')]"
+    },
+    "newProdPage":
+    {
+        "newProdPage": "//input[@id='o_field_input_11']",
+        "btnSave": "//button[contains(text(), 'Save')]",
+        "newProdName": "//li/span[contains(text(), '{0}')]"
     }
 }

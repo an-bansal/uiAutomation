@@ -7,8 +7,10 @@
     },
     "landingPage":
     {
-      "user": "//span[contains(text(), 'User')]",
-      "inventory": "//div[contains(text(), 'Inventory')]"
+        "user": "//span[contains(text(), 'User')]",
+        "appList": "//a[@class='fa o_menu_toggle fa-th']",
+        "inventory": "//div[contains(text(), 'Inventory')]",
+        "manufacturing": "//div[contains(text(), 'Manufacturing')]"
     },
     "inventoryPage":
     {
@@ -19,12 +21,31 @@
     "productsPage" :
     {
         "pageHeading" : "//li/span[contains(text(), 'Products')]",
-        "createProd": "//button[contains(text(), 'Create')]"
+        "createProd": "//button[contains(text(), 'Create')]",
+        "searchBox": "//input[@class = 'o_searchview_input']",
+        "firstRes": "//div[@class='o_kanban_view o_kanban_ungrouped']/div[1]"
     },
-    "newProdPage":
+    "prodInfoPage":
     {
-        "newProdPage": "//input[@id='o_field_input_11']",
+        "pageHeading": "//input[@id='o_field_input_11']",
         "btnSave": "//button[contains(text(), 'Save')]",
-        "newProdName": "//li/span[contains(text(), '{0}')]"
+        "newProdName": "//li/span[contains(text(), '{0}')]",
+        "updateQty": "//span[contains(text(), 'Update Quantity')]",
+        "createQty": "//button[contains(text(), 'Create')]",
+        "availableQyt": "//td[@name='available_quantity']",
+        "countedQty": "//input[@name='inventory_quantity']",
+        "saveQty": "//button[contains(text(), 'Save')]",
+        "countedQtySaved": "//span[contains(text(), '{0}')]"
+    },
+    "mafOrdPage":
+    {
+        "pageHeading": "//span[contains(text(), 'Manufacturing Orders')]",
+        "crtMfaOrd": "//button[contains(text(), 'Create')]",
+        "prdName": "input[id*=o_field_input_",
+        "prdQty": "//input[@name='product_qty']",
+        "btnConfirm": "//span[contains(text(), 'Confirm')]",
+        "btnMKD": "//span[contains(text(), 'Mark as Done')]",
+        "btnOk": "//span[contains(text(), 'Ok')]",
+        "btnApply": "//span[contains(text(), 'Apply')]"
     }
 }
